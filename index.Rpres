@@ -3,8 +3,8 @@ Replication Tutorial
 author: Lars Vilhuber
 date: April 2019
 autosize: true
-font-import: http://fonts.googleapis.com/css?family=Overpass
-font-family: 'Overpass'
+
+Cornell University
 
 Overview
 ========================================================
