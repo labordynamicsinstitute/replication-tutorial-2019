@@ -181,8 +181,7 @@ incremental: true
 - in general, support for citations is weak/ tricky
 - in general, not suggested when running counter to other best practices
   - becomes tricky when long-running computing is involved
-  - not ideal for collaboration amongst many authors
-  - when running counter to "short, focussed programs doing one thing" rule
+  - runs counter to "short, focussed programs doing one thing" rule
 
 
 Tools for a replicable document
