@@ -311,6 +311,8 @@ Other cloud-based compute environments:
   - Julia, Python, and R
   - different approach
   
+***
+
 ## https://codeocean.com
   - Software-agnostic
     - R
@@ -384,11 +386,9 @@ A (solved) problem of dependencies
 <img src="images/RStudio Cloud - Mozilla Firefox_460.png" width="80%" alt="scan" />
 </div>
 
-Issues of dependencies
+Issues of dependencies (new)
 =======================
 
-## Let me add a few things to that list:
-***
 ## You could have done the same thing on your laptop
   - you might not have (the same version of) **[Rstudio](https://www.rstudio.com)** installed (free)
   - you might not have (the same version of) **[R](https://www.r-project.org/)** installed (free)
@@ -477,6 +477,15 @@ Not quite
 <div style="text-align: center;">
 <img src="images/RStudio Cloud - Mozilla Firefox_464.png" width="80%" alt="scan" />
 </div>
+
+Another problem (maybe)
+=======================
+Enable popups for this site:
+
+<div style="text-align: center;">
+<img src="images/popup-blocker.png" width="80%" alt="scan" />
+</div>
+
 
 Problem solved NOW?
 ===================
