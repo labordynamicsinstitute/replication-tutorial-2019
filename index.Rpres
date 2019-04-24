@@ -145,16 +145,16 @@ Solving the first snag
 ======================
 We use the [Internet Archive](https://www.archive.org) 
 
-- http://researchmatters.blogs.census.gov/2016/12/01/how-much-do-startups-impact-employment-growth-in-the-u-s/
-
-
+- <small>[http://researchmatters.blogs.](http://researchmatters.blogs.census.gov/2016/12/01/how-much-do-startups-impact-employment-growth-in-the-u-s/)[census.gov/](http://researchmatters.blogs.census.gov/2016/12/01/how-much-do-startups-impact-employment-growth-in-the-u-s/)[2016/12/01/how-much-do-startups-](http://researchmatters.blogs.census.gov/2016/12/01/how-much-do-startups-impact-employment-growth-in-the-u-s/)[impact-employment-growth-](http://researchmatters.blogs.census.gov/2016/12/01/how-much-do-startups-impact-employment-growth-in-the-u-s/)[in-the-u-s/](http://researchmatters.blogs.census.gov/2016/12/01/how-much-do-startups-impact-employment-growth-in-the-u-s/)</small>
 ![original page](images/Selection_463.png)
 
-***
+
+Solving the first snag
+======================
 to archive websites:
 
-- https://web.archive.org/web/20161229210623/http://researchmatters.blogs.census.gov/2016/12/01/how-much-do-startups-impact-employment-growth-in-the-u-s/
 
+- <small>https://web.archive.org/web/20161229210623/http://researchmatters.blogs.census.gov/2016/12/01/how-much-do-startups-impact-employment-growth-in-the-u-s/</small>
 ![archived page](images/How Much Do Startups Impact Employment Growth in the U.S. Research Matters - Mozilla Firefox_462.png)
 
 Building a replicable document
