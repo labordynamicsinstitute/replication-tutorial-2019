@@ -3,6 +3,8 @@ Replication Tutorial
 author: Lars Vilhuber
 date: April 2019
 autosize: true
+font-import: http://fonts.googleapis.com/css?family=Overpass
+font-family: 'Overpass'
 
 Overview
 ========================================================
@@ -14,13 +16,23 @@ Overview
 Replication and Reproducibility in Social Sciences and Statistics: Context, Concerns, and Concrete Measures
 ========================================================
 
-[![Paris presentation](images/Vilhuber-Presentation2019-Paris-2019-03-28-title.png)](http://doi.org/10.5281/zenodo.2621959)
+
+[![Paris presentation](images/Vilhuber-Presentation2019-Paris-2019-03-28-title.png)](https://github.com/labordynamicsinstitute/replicability-presentation2019/raw/v20190328b/Vilhuber-Presentation2019-Paris-2019-03-28.pdf)
+
+
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2621959.svg)](https://doi.org/10.5281/zenodo.2621959)
+
 
 Details of Reproducibility Checks
 ========================================================
 
 - [Verification guidance](https://social-science-data-editors.github.io/guidance/Verification_guidance.html)
 - Discussion (David)
+
+***
+
+[![Verification guidance](images/Screenshot_2019-04-23 Verification guidance.png)](https://social-science-data-editors.github.io/guidance/Verification_guidance.html)
 
 A concrete example
 ==================
@@ -31,10 +43,18 @@ We are going to review a fully reproducible example:
 - Step 2: curation of data for reproducible analysis
 - Step 3: robustness and automation
 
-Requirements
+Requirements and Goals
 ============
+
+## Requirements
 - web browser
 - some R knowledge (not much)
+
+***
+## Goals
+- show you enough of the toolkit to have you explore more
+- recognize (some) of the limitations
+- NOT make you a master of this today
 
 Let's get started
 =================
@@ -43,6 +63,11 @@ The Census Bureau put out a blog post with data.
 
 - I attempted to replicate it
 - The replication itself should be replicable
+
+***
+http://researchmatters.blogs.census.gov/2016/12/01/how-much-do-startups-impact-employment-growth-in-the-u-s/
+
+![original page](images/Selection_463.png)
 
 The Context
 ===========
@@ -67,13 +92,15 @@ Replicated
 
 Let's start
 ===========
+type: section
 
-<div style="align: center;">
-<img src="images/giphy_scan.gif" alt="scan" />
+<div style="text-align: center;">
+<img src="images/giphy_scan.gif" width="50%" alt="scan" />
 </div>
 
 First problem
 =============
+incremental: true
 
 the original page: http://researchmatters.blogs.census.gov/2016/12/01/how-much-do-startups-impact-employment-growth-in-the-u-s/
 
@@ -132,10 +159,259 @@ to archive websites:
 
 Building a replicable document
 ==============================
+type: section
+
+Building a replicable document
+==============================
+incremental: true
+
+
+## Why would you do this
+
+- lay out all the steps as "literate programming"
+- can serve as the "README"!
+- ideally runs automatically
+
+***
+
+## Why would you not do this
+
+- in general, support for citations is weak/ tricky
+- in general, not suggested when running counter to other best practices
+  - becomes tricky when long-running computing is involved
+  - not ideal for collaboration amongst many authors
+  - when running counter to "short, focussed programs doing one thing" rule
+
+
+Tools for a replicable document
+===============================
+incremental: true
+
+## a place to store it
+  - Dropbox? 
+  - Github? *Gitlab? Bitbucket?*
+  
+## a place to compute it
+  - your laptop?
+  - my laptop?
+  - a university server?
+  - a cloud server?
+  - all of the above?
+  
+***
+## a programming language
+  - R
+  - Stata
+  - Python
+  - SPSS
+  
+## a format for the text
+  - Word?
+  - $\LaTeX$
+  - Markdown? 
+
+
+Tools for a replicable document
+===============================
+incremental: false
+
+## a place to store it
+  - Dropbox? 
+  - **Github!** *Gitlab? Bitbucket?*
+  
+## a place to compute it
+  - your laptop?
+  - my laptop?
+  - a university server?
+  - **a cloud server!**
+  - **all of the above!**
+  
+***
+## a programming language
+  - **R** (but don't worry!)
+  - *Stata*
+  - *Python*
+  - SPSS
+  
+## a format for the text
+  - Word?
+  - $\LaTeX$
+  - **Markdown!**
+
+Aside: Markdown
+===============
+type: sub-section
+
+## a format for the text
+  - Word?
+  - $\LaTeX$
+  - **Markdown**
+  - $\overline{x} = \frac{1}{N}\sum_{i=1}^N x_i$
+  
+***
+## Looks like this
+```
+## a format for the text
+ - Word?
+  - $\LaTeX$
+  - **Markdown**
+  - $\overline{x} = \frac{1}{N}\sum_{i=1}^N x_i$
+```
+
+Let's start... again
+===========
+type: section
+
+<div style="text-align: center;">
+<img src="images/giphy_scan.gif" width="50%" alt="scan" />
+</div>
+
+The replicable document
+=======================
+the replication project page: https://larsvilhuber.github.io/jobcreationblog/README.html
+
+![replicated page](images/Screenshot_2019-04-23 Replication for How Much Do Startups Impact Employment Growth in the U S .png)
+
+***
+the code behind it: https://github.com/larsvilhuber/jobcreationblog 
+
+![Github](images/Screenshot_2019-04-23 larsvilhuber jobcreationblog.png)
+
+
+Getting our hands dirty
+=======================
+Rather than squint on code on the screen, let's ... replicate my replication. Online. Now.
+
+- Go to https://rstudio.cloud 
+
+***
+[![Rstudio.cloud](images/Screenshot_2019-04-23 RStudio Cloud.png)](https://rstudio.cloud)
+
+Logging on to the cloud server
+=======================
+incremental: true
+
+![Rstudio.cloud login](images/Screenshot_2019-04-23 RStudio Cloud 2.png)
+
+***
+
+![Rstudio.cloud workspace](images/Screenshot_2019-04-23 RStudio Cloud 3.png)
+
+
+While you do that
+=================
+Other cloud-based compute environments:
+
+## [Rstudio.cloud](https://rstudio.cloud)
+  - R-focused
+  
+## [MyBinder.org](https://mybinder.org)
+  - Origins with Jupyter
+  - Julia, Python, and R
+  - different approach
+  
+## https://codeocean.com
+  - Software-agnostic
+    - R
+    - Python
+    - Stata !
+    - Matlab !
+    - others
+  - but always scripted
+  - integrated versioning of the entire compute capsule
+
+Creating a new project
+=======================
+incremental: true
+
+![Rstudio.cloud workspace](images/Screenshot_2019-04-23 RStudio Cloud 3.png)
+***
+![Rstudio.cloud new project](images/Screenshot_2019-04-23 RStudio Cloud 4.png)
+
+
+![Rstudio.cloud new project from Github](images/Screenshot_2019-04-23 RStudio Cloud 5.png)
+
+Creating a new project from Github
+==================================
+
+## https://github.com/larsvilhuber/jobcreationblog 
+
+![Github](images/Screenshot_2019-04-23 larsvilhuber jobcreationblog.png)
+
+***
+![Rstudio.cloud new project from Github](images/Screenshot_2019-04-23 RStudio Cloud 6.png)
 
 
 
+Creating a new project from Github
+==================================
 
+<div style="text-align: center;">
+<img src="images/RStudio Cloud - Mozilla Firefox_457.png" width="80%" alt="scan" />
+</div>
+
+Creating a new project from Github
+==================================
+
+<div style="text-align: center;">
+<img src="images/RStudio Cloud - Mozilla Firefox_458.png" width="80%" alt="scan" />
+</div>
+
+Notes 
+=====
+## You could have done the same thing on your laptop
+  - you might not have (the same version of) **[Rstudio](https://www.rstudio.com)** installed (free)
+  - you might not have (the same version of) **[R](https://www.r-project.org/)** installed (free)
+  - you might have a Mac/ Windows/ **Linux**/ old / brand new machine
+  
+***
+## All of these are issues affecting computational reproducibility
+
+However, they do not solve everything...
+
+Open the README document
+========================
+
+<div style="text-align: center;">
+<img src="images/RStudio Cloud - Mozilla Firefox_459.png" width="80%" alt="scan" />
+</div>
+
+A (solved) problem of dependencies
+==================================
+
+<div style="text-align: center;">
+<img src="images/RStudio Cloud - Mozilla Firefox_460.png" width="80%" alt="scan" />
+</div>
+
+Issues of dependencies
+=======================
+
+## Let me add a few things to that list:
+***
+## You could have done the same thing on your laptop
+  - you might not have (the same version of) **[Rstudio](https://www.rstudio.com)** installed (free)
+  - you might not have (the same version of) **[R](https://www.r-project.org/)** installed (free)
+  - you might have a Mac/ Windows/ **Linux**/ old / brand new machine
+  - <span style="color: red;">you might not have (the same version of) **packages** installed</span>
+
+Rstudio solves that for you
+==================================
+
+<div style="text-align: center;">
+<h2>Go ahead, click on "install"</h2>
+<img src="images/RStudio Cloud - Mozilla Firefox_460.png" width="80%" alt="scan" />
+</div>
+
+Solving dependencies
+====================
+The problem is not just in R:
+- SSC or Stata Journal packages in Stata
+- libraries or compilers in Fortran
+- Modules (paid!) in SPSS or SAS
+- packages in Python (and versions of Python!)
+
+***
+[![XKCD 1987](images/xkcd-dependency-hell.png)](https://xkcd.com/1987/)
 
 Solving dependencies (R)
 ====================
@@ -186,3 +462,240 @@ foreach pkg in outreg esttab someprog {
   ssc install `pkg'
 }
 ```
+
+
+Packages installed?
+==================
+
+## Click on "Knit"
+
+Problem solved?
+===============
+Not quite
+
+<div style="text-align: center;">
+<img src="images/RStudio Cloud - Mozilla Firefox_464.png" width="80%" alt="scan" />
+</div>
+
+Problem solved NOW?
+===================
+## You should have seen a pop-up window with the compiled text
+- do the graphs look the same?
+- does the text look the same?
+
+***
+![Success!](images/giphy_success.gif)
+
+Question:
+========
+type: prompt
+incremental: true
+
+## Are we done?
+
+***
+## Not quite...
+
+### Important 
+- how permanent is my document?
+- how permanent is the data we are using?
+
+### Useful 
+- how can others easily see my latest version?
+
+
+Making the document more permanent
+==================================
+type: section
+
+Making the document more permanent
+==================================
+
+
+
+- we could have started on the Open Science Framework (possibly)
+
+
+[![OSF](images/Screenshot_2019-04-23 OSF Home.png)](https://osf.io)
+
+***
+- we could create a PDF and store it on Cornell's eCommons
+[![ecommons](images/Screenshot_2019-04-23 Home.png)](https://ecommons.cornell.edu/)
+
+
+- we could submit to a journal!
+
+
+We are going to use Zenodo
+==========================
+incremental: true
+[![zenodo](images/Screenshot_2019-04-23 Zenodo - Research Shared.png)](https://zenodo.org)
+
+Zenodo is the social-science (general-purpose) repository managed by CERN
+
+***
+![CERN](images/cern-lhc-firsthalfofcmsinnertrackerbarrel.jpg)
+
+Why Zenodo?
+===========
+## Because it makes it really easy
+- create a hook from Zenodo to Github
+- create a release on Github
+- a permanent record remains on Zenodo with a DOI [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.400356.svg)](https://doi.org/10.5281/zenodo.400356)
+  - even if you delete your Github repo!
+
+For more info, see https://guides.github.com/activities/citable-code/
+  
+***
+![Zenodo page](images/Screenshot_2019-04-23 Replication for How Much Do Startups Impact Employment Growth in the U S Zenodo.png)
+
+Making the page more accessible
+===============================
+type: section
+
+Making the page more accessible
+===============================
+Initially, you saw this (from  https://larsvilhuber.github.io/jobcreationblog/README.html )
+
+![replicated page](images/Screenshot_2019-04-23 Replication for How Much Do Startups Impact Employment Growth in the U S .png)
+
+***
+But the code behind it is at https://github.com/larsvilhuber/jobcreationblog 
+
+![Github](images/Screenshot_2019-04-23 larsvilhuber jobcreationblog.png)
+
+Creating a webpage from Github-hosted code
+==========================================
+- Go into the settings
+- Tick the box to make it visible
+- Ensure that you have HTML pages ("Github Pages" does not render Markdown)
+
+
+***
+![settings](images/Screenshot_2019-04-23 larsvilhuber jobcreationblog settings.png)
+
+Having Github (and some friends) create a webpage
+================================================
+## We can go one step further
+- Have the document be created automatically when we change and commit
+  - R code would be run "in the cloud" (not on Rstudio.cloud manually)
+  - automatically! 
+  - See https://docs.travis-ci.com/user/languages/r/ for more details
+  
+***
+
+## Challenges
+- Code needs to be replicable!
+  - all the dependencies need to be solved in our code
+  - won't work for paid-for software (Stata, SPSS, SAS)
+  
+  
+How permanent is the data?
+=========================
+type: section
+
+The data is obtained from a Census Bureau website.
+- The website http://www2.census.gov/ces/bds/ might be re-organized and disappear
+- The data format might change
+- The API might change
+- We only need two small chunks of code
+
+Making the data more permanent
+=============================
+
+## Multiple options
+  -  [Dryad Digital Repository](http://datadryad.org/)
+  -  [figshare](http://figshare.com/)
+  -  [Harvard Dataverse Network](http://thedata.harvard.edu/dvn/)
+  -  [ICPSR](https://www.icpsr.umich.edu/icpsrweb/) and [OPENICPSR](https://www.openicpsr.org/openicpsr/)
+  -  [Open Science Framework](http://osf.io/)
+  -  [Zenodo](http://zenodo.org/)
+  
+***
+We used Zenodo again, but all the others are just as good!
+- We uploaded manually
+
+[![zenodo](images/Screenshot_2019-04-23 Zenodo - Research Shared.png)](https://zenodo.org)
+
+Using the permanent data
+========================
+
+<div style="text-align: center;">
+<img src="images/Screenshot_2019-04-23 Replication Data for Replication for How Much Do Startups Impact Employment Growth in the U S.png" width="80%" alt="scan" />
+</div>
+
+Using the permanent data
+========================
+## If we want to incorporate the Zenodo data
+We could
+- make all the changes right away
+- possibly mess up the live site/ latest version of the paper?
+- maybe annoy our co-authors?
+
+***
+## But we used a version control system with branching!
+We instead
+- created a new branch `zenodo`
+- made all the changes there
+- can compare the changes to the `main` branch
+- consult with our co-authors before pulling the changes back into the main branch
+- our live site/paper remains valid the entire time
+
+Compare the changes: Version Control
+===================
+Since we used Github, you can compare the changes: https://github.com/larsvilhuber/jobcreationblog/compare/zenodo
+
+<div style="text-align: center;">
+<img src="images/Screenshot_2019-04-23 larsvilhuber jobcreationblog diff.png" width="80%" alt="scan" />
+</div>
+
+We could then proceed to incorporate (**pull**) the changes into the `main` repository:
+
+<div style="text-align: center;">
+<img src="images/Screenshot_2019-04-23 larsvilhuber jobcreationblog pull request.png" width="50%" alt="scan" />
+</div>
+
+Read more about it at https://help.github.com/en/articles/about-pull-requests
+
+Conclusion
+==========
+type: section
+
+Conclusion
+==========
+## Replication can be a lot of work
+We've touched on
+- Replication per se
+- Replicable documents
+- Possible pitfalls of software dependencies
+- Cloud computing platforms
+- Permanence of source material (website, data) and how to solve it
+
+***
+
+![project](images/Screenshot_2019-04-23 Replication for How Much Do Startups Impact Employment Growth in the U S .png)
+
+Conclusion
+==========
+
+## We have not covered everything
+... because there can be a lot more
+- High-performance computing (length, quantity, throughput)
+- Issues with commercial (paid) software (access, permanence)
+- Data that is not public-use or easily downloadable
+- Data that you need to walk into a locked room for
+
+***
+![SafePODS](images/SafePODS.png)
+
+Thank you
+==========
+type: section
+
+Presentation: https://labordynamicsinstitute.github.io/replication-tutorial-2019
+
+Source: https://github.com/labordynamicsinstitute/replication-tutorial-2019
+
+
+
+![CC-BY-4.0](images/cc-by-nc.png) <small>[Creative Commons Attribution-NonCommercial 4.0 International Public License](LICENSE.html)</small>
