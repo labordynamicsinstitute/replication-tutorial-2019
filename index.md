@@ -3,6 +3,7 @@ Replication Tutorial
 author: Lars Vilhuber
 date: April 2019
 autosize: true
+width: 1200
 
 Cornell University
 
@@ -269,12 +270,12 @@ type: section
 
 The replicable document
 =======================
-the replication project page: https://larsvilhuber.github.io/jobcreationblog/README.html
+the [replication project page](https://larsvilhuber.github.io/jobcreationblog/README.html): 
 
 ![replicated page](images/Screenshot_2019-04-23 Replication for How Much Do Startups Impact Employment Growth in the U S .png)
 
 ***
-the code behind it: https://github.com/larsvilhuber/jobcreationblog 
+the code behind it: <small>https://github.com/larsvilhuber/jobcreationblog </small>
 
 ![Github](images/Screenshot_2019-04-23 larsvilhuber jobcreationblog.png)
 
@@ -376,7 +377,7 @@ Open the README document
 ========================
 
 <div style="text-align: center;">
-<img src="images/RStudio Cloud - Mozilla Firefox_459.png" width="80%" alt="scan" />
+<img src="images/RStudio Cloud - Mozilla Firefox_459.png" width="60%" alt="scan" />
 </div>
 
 A (solved) problem of dependencies
@@ -475,7 +476,7 @@ Problem solved?
 Not quite
 
 <div style="text-align: center;">
-<img src="images/RStudio Cloud - Mozilla Firefox_464.png" width="80%" alt="scan" />
+<img src="images/RStudio Cloud - Mozilla Firefox_464.png" width="60%" alt="scan" />
 </div>
 
 Another problem (maybe)
@@ -483,7 +484,7 @@ Another problem (maybe)
 Enable popups for this site:
 
 <div style="text-align: center;">
-<img src="images/popup-blocker.png" width="80%" alt="scan" />
+<img src="images/popup-blocker.png" width="60%" alt="scan" />
 </div>
 
 
@@ -565,9 +566,9 @@ type: section
 
 Making the page more accessible
 ===============================
-Initially, you saw this (from  https://larsvilhuber.github.io/jobcreationblog/README.html )
+Initially, you saw this 
 
-![replicated page](images/Screenshot_2019-04-23 Replication for How Much Do Startups Impact Employment Growth in the U S .png)
+[![replicated page](images/Screenshot_2019-04-23 Replication for How Much Do Startups Impact Employment Growth in the U S .png)](https://larsvilhuber.github.io/jobcreationblog/README.html)
 
 ***
 But the code behind it is at https://github.com/larsvilhuber/jobcreationblog 
@@ -659,6 +660,9 @@ Since we used Github, you can compare the changes: https://github.com/larsvilhub
 <img src="images/Screenshot_2019-04-23 larsvilhuber jobcreationblog diff.png" width="80%" alt="scan" />
 </div>
 
+Compare the changes: Version Control
+===================
+
 We could then proceed to incorporate (**pull**) the changes into the `main` repository:
 
 <div style="text-align: center;">
@@ -690,10 +694,10 @@ Conclusion
 
 ## We have not covered everything
 ... because there can be a lot more
-- High-performance computing (length, quantity, throughput)
-- Issues with commercial (paid) software (access, permanence)
-- Data that is not public-use or easily downloadable
-- Data that you need to walk into a locked room for
+- HP computing <small>(length, quantity, throughput)</small>
+- Issues with commercial (paid) software <small>(access, permanence)</small>
+- Data that is not public-use
+- Data in a locked room
 
 ***
 ![SafePODS](images/SafePODS.png)
