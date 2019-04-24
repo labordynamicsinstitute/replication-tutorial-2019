@@ -1,4 +1,4 @@
-index
+Replication Tutorial
 ========================================================
 author: Lars Vilhuber
 date: April 2019
