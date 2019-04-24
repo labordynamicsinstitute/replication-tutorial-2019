@@ -283,10 +283,10 @@ Getting our hands dirty
 =======================
 Rather than squint on code on the screen, let's ... replicate my replication. Online. Now.
 
-- Go to https://rstudio.cloud 
+- Go to <a href="https://rstudio.cloud" target="_blank">https://rstudio.cloud</a>
 
 ***
-[![Rstudio.cloud](images/Screenshot_2019-04-23 RStudio Cloud.png)](https://rstudio.cloud)
+<a href="https://rstudio.cloud" target="_blank"><img alt="Rstudio.cloud" src="images/Screenshot_2019-04-23 RStudio Cloud.png" /></a>
 
 Logging on to the cloud server
 =======================
