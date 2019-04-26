@@ -29,7 +29,7 @@ Details of Reproducibility Checks
 ========================================================
 
 - [Verification guidance](https://social-science-data-editors.github.io/guidance/Verification_guidance.html)
-- Discussion (David)
+- [Discussion](https://github.com/labordynamicsinstitute/replicability-training/raw/master/Summer%202019/replicator_checklist.pdf) (David)
 
 ***
 
