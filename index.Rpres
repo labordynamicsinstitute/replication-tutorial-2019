@@ -1,7 +1,7 @@
 Replication Tutorial
 ========================================================
 author: Lars Vilhuber
-date: April 2019
+date: August 2019
 autosize: true
 width: 1200
 
