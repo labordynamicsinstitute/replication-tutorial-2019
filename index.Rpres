@@ -25,26 +25,20 @@ Replication and Reproducibility in Social Sciences and Statistics: Context, Conc
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2621959.svg)](https://doi.org/10.5281/zenodo.2621959)
 
 
-Details of Reproducibility Checks
-========================================================
 
-- [Verification guidance](https://social-science-data-editors.github.io/guidance/Verification_guidance.html)
-- [Discussion](https://github.com/labordynamicsinstitute/replicability-training/raw/master/Summer%202019/replicator_checklist.pdf) (David)
-
-***
-
-[![Verification guidance](images/Screenshot_2019-04-23 Verification guidance.png)](https://social-science-data-editors.github.io/guidance/Verification_guidance.html)
-
-A concrete example
+Goals of this tutorial
 ==================
 
-We are going to review a fully reproducible example:
+- Goal 1: Identify all the elements of a fully reproducible analysis
+- Goal 2: Be able to curate the data and code necessary for reproducible analysis
+- Goal 3: Robustness and automation - getting close to push-button reproducibility
+- Goal 4: Correctly document reproducible research
 
-- Step 1: elements of the reproducible analysis
-- Step 2: curation of data for reproducible analysis
-- Step 3: robustness and automation
 
-Requirements and Goals
+
+
+
+Requirements 
 ============
 
 ## Requirements
@@ -52,13 +46,109 @@ Requirements and Goals
 - some R knowledge (not much)
 
 ***
-## Goals
+## Sub goals
 - show you enough of the toolkit to have you explore more
 - recognize (some) of the limitations
 - NOT make you a master of this today
 
+
+
+
+
 Let's get started
 =================
+type: section
+
+Details: Goal 1: Elements of a fully reproducible analysis
+===============
+Consider the AEA's suggested README and the Social Science Data Editors' guidance for verification:
+
+- [Template README](https://aeadataeditor.github.io/aea-de-guidance/template-README.html)
+- [Verification guidance](https://social-science-data-editors.github.io/guidance/Verification_guidance.html)
+
+***
+
+[![Verification guidance](images/Screenshot_2019-04-23 Verification guidance.png)](https://social-science-data-editors.github.io/guidance/Verification_guidance.html)
+
+Details: Goal 1
+===============
+
+### Elements
+
+- Data (where possible)
+- Data provenance
+- Instructions
+- Code (always*)
+- Expected results
+
+
+Goal 1: Elements: Data (where possible)
+=================
+
+- Old method: send the journal a ZIP file
+
+- Source: Your laptop
+
+- Destination: random file on a journal website
+
+***
+
+Questions/ What-ifs:
+
+-  the data is not on your laptop?
+  - too big
+  - on server
+  - a database
+- the data is not yours to send
+  - confidentiality
+  - proprietary
+  - other licensing issues
+  
+Goal 1: Elements: Data (where possible)
+=================
+
+- Old method: send the journal a ZIP file
+
+- **Source: Your laptop**
+
+- Destination: random file on a journal website
+
+***
+
+Questions/ What-ifs:
+
+- how did the data get to your laptop?
+- how did the data get generated?
+
+These are **provenance** questions.
+
+
+Goal 1: Elements: Data (where possible)
+=================
+
+- Old method: send the journal a ZIP file
+
+- Source: Your laptop
+
+- **Destination: random file on a journal website**
+
+***
+
+Questions/ What-ifs:
+
+- is the ZIP file complete?
+- are the ZIP file contents curated (preserved)?
+- can the data be re-used?
+- can the data be properly attributed to the creator?
+- can the data be found independently of the article?
+
+
+These are **FAIR** questions
+
+
+
+The Example
+===========
 
 The Census Bureau put out a blog post with data.
 
@@ -159,6 +249,27 @@ to archive websites:
 
 - <small>https://web.archive.org/web/20161229210623/http://researchmatters.blogs.census.gov/2016/12/01/how-much-do-startups-impact-employment-growth-in-the-u-s/</small>
 ![archived page](images/How Much Do Startups Impact Employment Growth in the U.S. Research Matters - Mozilla Firefox_462.png)
+
+
+STOP HERE
+=======
+type: section
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Building a replicable document
 ==============================
