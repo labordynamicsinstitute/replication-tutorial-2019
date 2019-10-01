@@ -52,7 +52,7 @@ Replication and Reproducibility in Social Sciences and Statistics: Context, Conc
 ========================================================
 
 
-[![Paris presentation](images/Vilhuber-Presentation2019-Paris-2019-03-28-title.png)](https://github.com/labordynamicsinstitute/replicability-presentation2019/raw/v20190328b/Vilhuber-Presentation2019-Paris-2019-03-28.pdf)
+[![Paris presentation](images/Vilhuber-Presentation2019-Paris-2019-03-28-title.png)](https://github.com/labordynamicsinstitute/replicability-presentation2019/raw/v20190328b/Vilhuber-Presentation2019-Paris-2019-03-28.pdf) ([alt](https://github.com/labordynamicsinstitute/replicability-presentation2019))
 
 
 
@@ -490,6 +490,14 @@ Also:
   - public repositories
   
 at least for academics.
+
+Training for Git
+================
+
+Many training opportunities and tutorials out there
+
+- [my own short training](https://github.com/labordynamicsinstitute/replicability-training/blob/master/Fall%202019/Basics_of_Git.md)
+- [10 minute read Git Handbook](https://guides.github.com/introduction/git-handbook/)
 
 What Github, Gitlab, etc. are NOT
 =================
