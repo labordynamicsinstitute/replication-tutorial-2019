@@ -7,12 +7,12 @@ width: 1200
 
 Cornell University
 
-```{r setup, echo=FALSE, include=FALSE}
+```{r setup, echo=FALSE, include=FALSE, msg = FALSE, eval=FALSE}
 pkgTest <- function(x)
 {
   if (!require(x,character.only = TRUE))
   {
-    install.packages(x,dep=TRUE)
+    install.packages(x,dep=TRUE,repos=" http://cran.us.r-project.org")
     if(!require(x,character.only = TRUE)) stop("Package not found")
   }
   return("OK")
@@ -30,12 +30,14 @@ pkgTestGit <- function(x)
   return("OK")
 }
 
-global.libraries <- c("dplyr","rmarkdown","ggplot2","ggthemes","knitr")
+global.libraries <- c("dplyr","rmarkdown","ggplot2","ggthemes","knitr","devtools")
 dev.libraries <- c("hadley/emo")
 
 results <- sapply(as.list(global.libraries), pkgTest)
 results.dev <- sapply(as.list(dev.libraries),pkgTestGit)
+```
 
+```{r, echo=FALSE}
 
 # shortcuts
 check <- emo::ji("heavy_check_mark")
