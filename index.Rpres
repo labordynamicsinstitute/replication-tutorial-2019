@@ -7,6 +7,40 @@ width: 1200
 
 Cornell University
 
+```{r setup, echo=FALSE, include=FALSE}
+pkgTest <- function(x)
+{
+  if (!require(x,character.only = TRUE))
+  {
+    install.packages(x,dep=TRUE)
+    if(!require(x,character.only = TRUE)) stop("Package not found")
+  }
+  return("OK")
+}
+
+pkgTestGit <- function(x)
+{
+	# handle the github notation
+  x.pkg <- unlist(strsplit(x,split="/"))[2]
+  if (!require(x.pkg,character.only = TRUE))
+  {
+    devtools::install_github(x)
+    if(!require(x.pkg,character.only = TRUE)) stop("Package not found")
+  }
+  return("OK")
+}
+
+global.libraries <- c("dplyr","rmarkdown","ggplot2","ggthemes","knitr")
+dev.libraries <- c("hadley/emo")
+
+results <- sapply(as.list(global.libraries), pkgTest)
+results.dev <- sapply(as.list(dev.libraries),pkgTestGit)
+
+
+# shortcuts
+check <- emo::ji("heavy_check_mark")
+```
+
 Overview
 ========================================================
 
@@ -80,6 +114,7 @@ Details: Goal 1
 - Instructions
 - Code (always*)
 - Expected results
+- Persistence
 
 
 Goal 1: Elements: Data (where possible)
@@ -145,7 +180,17 @@ Questions/ What-ifs:
 
 These are **FAIR** questions
 
+FAIR Data Principles
+===================
 
+- **F**indable
+- **A**ccessible
+- **I**nteroperable
+- **R**e-Usable
+
+***
+
+![FAIR Data Principles](images/Screenshot_2019-09-30_The_FAIR_Data_Principles.png)
 
 The Example
 ===========
@@ -154,6 +199,7 @@ The Census Bureau put out a blog post with data.
 
 - I attempted to replicate it
 - The replication itself should be replicable
+- Focus here: *my replication* of the blog post
 
 ***
 http://researchmatters.blogs.census.gov/2016/12/01/how-much-do-startups-impact-employment-growth-in-the-u-s/
@@ -171,7 +217,7 @@ the original page:
 ***
 the replication project page: https://larsvilhuber.github.io/jobcreationblog/README.html
 
-![replicated page](images/Screenshot_2019-04-23 Replication for How Much Do Startups Impact Employment Growth in the U S .png)
+![replicated page](images/Screenshot_2019-04-23-Replication_for_how_much.png)
 
 We are going to focus on 1 figure
 =================================
@@ -191,25 +237,97 @@ type: section
 <img src="images/giphy_scan.gif" width="50%" alt="scan" />
 </div>
 
+
+
+Elements of Goal 1
+===============
+
+### Elements
+
+- Data (where possible)
+- Data provenance
+- Instructions
+- Code (always*)
+- Expected results
+- Persistence
+
+***
+
+### Here:
+
+- Data is small (< 75k) - `r check`
+- Data provenance - URL `r check`
+- Instructions - RMarkdown file `r check`
+- Code - Within Rmd `r check`
+- Expected results - Copy of Figure `r check`
+- Persistence - Github `r check`
+
+
+Hold on
+===========
+type: section
+
+```{r, include=FALSE}
+# Image by <a href="https://pixabay.com/users/3D_Maennchen-1553824/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1013732">Peggy und Marco Lachmann-Anke</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1013732">Pixabay</a>
+```
+
+
+<div style="text-align: center;">
+<img src="images/stop-1013732_640.jpg" width="50%" alt="scan" />
+</div>
+
+Elements of Goal 1
+===============
+
+### Elements
+
+- Data (where possible)
+- Data provenance
+- Instructions
+- Code (always*)
+- Expected results
+- Persistence
+
+***
+
+### Here:
+
+- Data is small (< 75k) - `r check`
+- **Data provenance - URL ??**
+- Instructions - RMarkdown file
+- Code - Within Rmd
+- Expected results - Copy of Figure
+- **Persistence - Github ??**
+
+
+
+Data provenance
+===============
+"Data" in this project:
+- the blog post
+- the underlying data
+
+***
+Where available:
+- URL
+- URL
+
+
+
+
+
+
+
+
 First problem
 =============
 incremental: true
 
 the original page: http://researchmatters.blogs.census.gov/2016/12/01/how-much-do-startups-impact-employment-growth-in-the-u-s/
 
-![oops](images/Server Not Found - Mozilla Firefox_461.png)
+![oops](images/Server_Not_Found.png)
 
-When the replicated disappear
-=============================
-Consider the key inputs to this replication:
 
-- the original article
-- the original data
-- my article replicating the original article
-- the data for my article
-
-***
-![stacks](images/Archives-Stacks-1.jpg)
 
 Safeguarding scientific output
 ==============================
@@ -232,7 +350,29 @@ Safeguarding scientific output
 - **data** should be stored in repositories
 
 ***
-![tree in library](images/8520ec257e8022dbf450a989e87b9ccb.jpg)
+![stacks](images/Archives-Stacks-1.jpg)
+
+<!-- ![tree in library](images/8520ec257e8022dbf450a989e87b9ccb.jpg) -->
+
+These are still fallible
+========================
+
+<div style="text-align: center;">
+<img src="images/d814ae2e0c47c399afcd93f6e232fb09.jpg" width="50%" alt="scan" />
+</div>
+
+
+What is NOT safeguarded
+=============================
+- random URLs
+- Github repositories
+
+
+***
+![Github not found](images/Page_not_found_GitHub_Pages.png)
+
+
+
 
 Solving the first snag
 ======================
@@ -248,157 +388,88 @@ to archive websites:
 
 
 - <small>https://web.archive.org/web/20161229210623/http://researchmatters.blogs.census.gov/2016/12/01/how-much-do-startups-impact-employment-growth-in-the-u-s/</small>
-![archived page](images/How Much Do Startups Impact Employment Growth in the U.S. Research Matters - Mozilla Firefox_462.png)
+![archived page](images/blog_page_internet_archive.png)
 
+Exercise
+========
+type: alert
 
-STOP HERE
-=======
-type: section
+- Pick a random website
+  - Stephen Fienberg - http://www.stat.cmu.edu/~fienberg/
+  - CIQSS - https://www.ciqss.org/a-propos
+  - etc.
+- Figure out if there is a Web Archive copy of it
+  - Useful: [WayBack Machine Firefox Plugin](https://addons.mozilla.org/en-CA/firefox/addon/wayback-machine_new/)
+- If not, get the Web Archive (aka WayBack Machine) to create a copy
+- Cite the Web Archive version of the page
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Building a replicable document
-==============================
-type: section
-
-Building a replicable document
-==============================
-incremental: true
-
-
-## Why would you do this
-
-- lay out all the steps as "literate programming"
-- can serve as the "README"!
-- ideally runs automatically
-
-***
-
-## Why would you not do this
-
-- in general, support for citations is weak/ tricky
-- in general, not suggested when running counter to other best practices
-  - becomes tricky when long-running computing is involved
-  - runs counter to "short, focussed programs doing one thing" rule
-
-
-Tools for a replicable document
-===============================
-incremental: true
-
-## a place to store it
-  - Dropbox? 
-  - *Github? Gitlab? Bitbucket?*
-  
-## a place to compute it
-  - your laptop?
-  - my laptop?
-  - a university server?
-  - a cloud server?
-  - all of the above?
-  
-***
-## a programming language
-  - R
-  - Stata
-  - Python
-  - SPSS
-  
-## a format for the text
-  - Word?
-  - $\LaTeX$
-  - Markdown? 
-
-
-Tools for a replicable document
-===============================
-incremental: false
-
-## a place to store it
-  - Dropbox? 
-  - **Github!** **Gitlab!** *Bitbucket?*
-  
-## a place to compute it
-  - your laptop?
-  - my laptop?
-  - a university server?
-  - **a cloud server!**
-  - **all of the above!**
-  
-***
-## a programming language
-  - **R** (but don't worry!)
-  - *Stata*
-  - *Python*
-  - SPSS
-  
-## a format for the text
-  - Word?
-  - $\LaTeX$
-  - **Markdown!**
-
-Aside: Markdown
-===============
-type: sub-section
-
-## a format for the text
-  - Word?
-  - $\LaTeX$
-  - **Markdown**
-  - $\overline{x} = \frac{1}{N}\sum_{i=1}^N x_i$
-  
-***
-## Looks like this
-```
-## a format for the text
- - Word?
-  - $\LaTeX$
-  - **Markdown**
-  - $\overline{x} = \frac{1}{N}\sum_{i=1}^N x_i$
-```
-
-Let's start... again
-===========
+Do it now
+==========
 type: section
 
 <div style="text-align: center;">
 <img src="images/giphy_scan.gif" width="50%" alt="scan" />
 </div>
 
-The replicable document
-=======================
-the [replication project page](https://larsvilhuber.github.io/jobcreationblog/README.html): 
+Result
+======
 
-![replicated page](images/Screenshot_2019-04-23 Replication for How Much Do Startups Impact Employment Growth in the U S .png)
+> Goal 2: Be able to curate the data and code necessary for reproducible analysis
+
+<div style="text-align: center;">
+<img src="images/partway-768567_640.jpg" width="50%" alt="scan" />
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Let's start... again
+===========
+type: section
+
+
+
+The replication of the original 
+=======================
+the [project page](https://larsvilhuber.github.io/jobcreationblog/README.html): 
+
+![replicated page](images/Screenshot_2019-04-23-Replication_for_how_much.png)
 
 ***
 the code behind it: <small>https://github.com/larsvilhuber/jobcreationblog </small>
 
-![Github](images/Screenshot_2019-04-23 larsvilhuber jobcreationblog.png)
+![Github](images/Screenshot_2019-04-23_larsvilhuber_jobcreationblog.png)
+
+What is Github?
+==============
+incremental: true
 
 
-A bit confusing - stay with me
-=======================
-In order to better support this tutorial, I "cloned" my main code repository to a new location:
+`git`
 
-- from  <small>https://</small> **github.com** <small>/larsvilhuber/jobcreationblog</small>
-- to <small>https://</small> **gitlab.com** <small>/larsvilhuber/jobcreationblog</small>
+Distributed version control system, created by Linus Torvalds in 2005
+![branching system](images/branch-per-task.png)
 
-and then *froze it*.
+***
+Github.com
+
+> At a high level, GitHub is a website and cloud-based service that helps developers store and manage their code, as well as track and control changes to their code.
+[[1](https://kinsta.com/knowledgebase/what-is-github/)]
+
+Also a **collaboration tool** when multiple people (developers, researchers) collaborate in a structured fashion on text/code/programs/etc.
+
 
 Gitlab? Github? Git? What's up with that?
 =========================================
@@ -410,16 +481,101 @@ type: warning
 
 > Both GitLab (and GitLab.com) and GitHub (and GitHub.com) are products providing Git repository hosting service. [[1](https://www.quora.com/What-are-the-differences-between-GitHub-GitLab)]
 
+***
 
-(Optional) Bonus points
+Also:
+- Bitbucket.com (despite no Git in the name)
+- All of these have free plans for 
+  - private (non-public) repositories
+  - public repositories
+  
+at least for academics.
+
+What Github, Gitlab, etc. are NOT
+=================
+incremental: true
+
+While these sites make it really easy to publish your code/website/etc.
+
+***
+
+They are **NOT** archives.
+![Github not found](images/Page_not_found_GitHub_Pages.png)
+
+Github etc. are transitory
+=============================
+incremental: true
+
+Github pages, much as private websites, can be unpublished at any time:
+
+![Github unpublish](images/UnpublishingGitHubHelp.png)
+
+***
+In fact, the entire code repository can be deleted at any time:
+
+![Github delete](images/Deleting_a_repositoryGitHubHelp.png)
+
+
+Git(hub,lab) as a tool for reproducible research
+================
+> Goal 3: Robustness and automation - getting close to push-button reproducibility
+
+(Advanced features of Git(hub,lab) allows us to implement and test that)
+
+***
+> Goal 4: Correctly document reproducible research
+
+- Git(hub,lab) allow us to freeze consistent versions of input data, code, and output as "*releases*", "versions", etc., thus making it easy to **document your code** 
+
+Git(hub,lab) as a tool for reproducible research
+================
+> Goal 3: Robustness and automation - getting close to push-button reproducibility
+
+(Advanced features of Git(hub,lab) allows us to implement and test that)
+
+***
+> Goal 4: Correctly document reproducible research
+
+
+- (also respond to thesis advisor, referree, editor, curious journalist asking the question "what has changed") 
+
+![changes](images/releases-github.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Getting our hands dirty
 =======================
-If you want to save any modifications you will make, you need to first *fork* my repository yourself:
+Rather than squint on code on the screen, let's ... replicate my replication. Online. Now.
 
-- use the "Fork" button
-- you could also use the "Import project" (Gitlab.com) functionality
+We will
 
-and then replace "**your name here**" for all occurrences of "**larsvilhuber**" in the Git URLs shown in the tutorial from here on.
+- Make a copy of the code repository
+- Verify that the original code runs, and make any changes necessary
+- Make a (permanent) copy of the code
+- Address any issues on the way
 
+***
+Requirements:
+- Rstudio.cloud account (alt: Google, Github)
+- Git*** account
+  - alt Gitlab: Google/ Twitter/ Github / Bitbucket
+  - alt Github: none
+- Zenodo account (alt: Github, ORCID)
+
+You can delete all online materials at the end of the class.
 
 Getting our hands dirty
 =======================
@@ -428,17 +584,56 @@ Rather than squint on code on the screen, let's ... replicate my replication. On
 - Go to <a href="https://rstudio.cloud" target="_blank">https://rstudio.cloud</a>
 
 ***
-<a href="https://rstudio.cloud" target="_blank"><img alt="Rstudio.cloud" src="images/Screenshot_2019-04-23 RStudio Cloud.png" /></a>
+<a href="https://rstudio.cloud" target="_blank"><img alt="Rstudio.cloud" src="images/Screenshot_2019-04-23_RStudio_Cloud.png" /></a>
+
+
+
+
+
+First task: Make a copy
+=====================
+
+Source: <small>https://github.com/larsvilhuber/jobcreationblog </small>
+
+![Github](images/Screenshot_2019-04-23_larsvilhuber_jobcreationblog.png)
+
+***
+
+Destination: 
+
+<a href="https://gitlab.com"><img alt="Gitlab logo" width="45%" style="vertical-align: middle;" src="images/gitlab-logo-gray-rgb.png"/>
+<img alt="Gitlab logo" width="10%" style="vertical-align: middle;" src="images/GitHub-Mark-120px-plus.png"/></a>
+<a href="https://github.com"><img alt="Gitlab logo" width="25%" style="vertical-align: middle;" src="images/GitHub_Logo.png"/></a>
+
+
+Using Gitlab: Two options
+=========================
+incremental: true
+
+**Import** project from Git
+
+![gitlab import project](images/gitlab-import-project.png)
+
+***
+
+**Fork** an existing Gitlab project: 
+
+**GITLAB**<small>.com/larsvilhuber/jobcreationblog </small>
+
+![gitlab fork project](images/gitlab-fork-project.png)
+
+
+
 
 Logging on to the cloud server
 =======================
 incremental: true
 
-![Rstudio.cloud login](images/Screenshot_2019-04-23 RStudio Cloud 2.png)
+![Rstudio.cloud login](images/Screenshot_2019-04-23_RStudio_Cloud_2.png)
 
 ***
 
-![Rstudio.cloud workspace](images/Screenshot_2019-04-23 RStudio Cloud 3.png)
+![Rstudio.cloud workspace](images/Screenshot_2019-04-23_RStudio_Cloud_3.png)
 
 
 While you do that
@@ -469,22 +664,22 @@ Creating a new project
 =======================
 incremental: true
 
-![Rstudio.cloud workspace](images/Screenshot_2019-04-23 RStudio Cloud 3.png)
+![Rstudio.cloud workspace](images/Screenshot_2019-04-23_RStudio_Cloud_3.png)
 ***
-![Rstudio.cloud new project](images/Screenshot_2019-04-23 RStudio Cloud 4.png)
+![Rstudio.cloud new project](images/Screenshot_2019-04-23_RStudio_Cloud_4.png)
 
 
-![Rstudio.cloud new project from Github](images/Screenshot_2019-04-23 RStudio Cloud 5.png)
+![Rstudio.cloud new project from Github](images/Screenshot_2019-04-23_RStudio_Cloud_5.png)
 
 Creating a new project from Gitlab
 ==================================
 
 ## https://gitlab.com/larsvilhuber/jobcreationblog 
 
-![Github](images/Screenshot_2019-04-23 larsvilhuber jobcreationblog.png)
+![Github](images/Screenshot_2019-04-23_larsvilhuber_jobcreationblog.png)
 
 ***
-![Rstudio.cloud new project from Gitlab](images/Screenshot_2019-04-23 RStudio Cloud 7.png)
+![Rstudio.cloud new project from Gitlab](images/Screenshot_2019-04-23_RStudio_Cloud_7.png)
 
 
 
@@ -710,12 +905,12 @@ Making the page more accessible
 ===============================
 Initially, you saw this 
 
-[![replicated page](images/Screenshot_2019-04-23 Replication for How Much Do Startups Impact Employment Growth in the U S .png)](https://larsvilhuber.github.io/jobcreationblog/README.html)
+[![replicated page](images/Screenshot_2019-04-23-Replication_for_how_much.png)](https://larsvilhuber.github.io/jobcreationblog/README.html)
 
 ***
 But the code behind it is at https://github.com/larsvilhuber/jobcreationblog 
 
-![Github](images/Screenshot_2019-04-23 larsvilhuber jobcreationblog.png)
+![Github](images/Screenshot_2019-04-23_larsvilhuber_jobcreationblog.png)
 
 Creating a webpage from Github-hosted code
 ==========================================
@@ -838,7 +1033,7 @@ We've touched on
 
 ***
 
-![project](images/Screenshot_2019-04-23 Replication for How Much Do Startups Impact Employment Growth in the U S .png)
+![project](images/Screenshot_2019-04-23-Replication_for_how_much.png)
 
 Conclusion
 ==========
