@@ -1,0 +1,18 @@
+A bit confusing - stay with me
+=======================
+In order to better support this tutorial, I "cloned" my main code repository to a new location:
+
+- from  <small>https://</small> **github.com** <small>/larsvilhuber/jobcreationblog</small>
+- to <small>https://</small> **gitlab.com** <small>/larsvilhuber/jobcreationblog</small>
+
+and then *froze it*.
+
+
+(Optional) Bonus points
+=======================
+If you want to save any modifications you will make, you need to first *fork* my repository yourself:
+
+- use the "Fork" button
+- you could also use the "Import project" (Gitlab.com) functionality
+
+and then replace "**your name here**" for all occurrences of "**larsvilhuber**" in the Git URLs shown in the tutorial from here on.

@@ -1,0 +1,15 @@
+Goals of this tutorial
+==================
+
+- Goal 1: Identify all the elements of a fully reproducible analysis
+- Goal 2: Be able to curate the data and code necessary for reproducible analysis
+- Goal 3: Robustness and automation - getting close to push-button reproducibility
+- Goal 4: Correctly document reproducible research
+
+
+- Make a copy of the code repository
+- Verify that the original code runs, and make any changes necessary
+- Make a (permanent) copy of the code
+- Address any issues on the way
+
+

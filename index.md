@@ -589,9 +589,29 @@ incremental: true
 ![gitlab fork project](images/gitlab-fork-project.png)
 
 
+Your own Gitlab "jobcreationblog" repo
+=====================================
+incremental: true
+
+> Goal 2: Be able to curate the data and code necessary for reproducible analysis
+
+<div style="text-align: center;">
+<img src="images/giphy_success.gif" width="60%" alt="scan" />
+</div>
+
+Next step: Rstudio.cloud
+============
+type: alert
 
 
-Logging on to the cloud server
+
+<div style="text-align: center;">
+<img alt="Rstudio.cloud" src="images/Screenshot_2019-04-23_RStudio_Cloud.png" width="60%"/>
+</div>
+
+
+
+Logging on to the Rstudio.cloud server
 =======================
 incremental: true
 
@@ -644,23 +664,26 @@ Creating a new project from Gitlab
 
 ![Github](images/Screenshot_2019-04-23_larsvilhuber_jobcreationblog.png)
 
+(replace "**larsvilhuber**" with your own Gitlab name space, or your Github clone URL)
+
+![Gitlab clone button](images/gitlab-clone-project.png)
+
 ***
 ![Rstudio.cloud new project from Gitlab](images/Screenshot_2019-04-23_RStudio_Cloud_7.png)
-
 
 
 Creating a new project from Gitlab
 ==================================
 
 <div style="text-align: center;">
-<img src="images/RStudio Cloud - Mozilla Firefox_457.png" width="80%" alt="scan" />
+<img src="images/RStudio_Cloud_457.png" width="80%" alt="scan" />
 </div>
 
 Creating a new project from Gitlab
 ==================================
 
 <div style="text-align: center;">
-<img src="images/RStudio Cloud - Mozilla Firefox_458.png" width="80%" alt="scan" />
+<img src="images/RStudio_Cloud_458.png" width="80%" alt="scan" />
 </div>
 
 Notes 
@@ -679,14 +702,14 @@ Open the README document
 ========================
 
 <div style="text-align: center;">
-<img src="images/RStudio Cloud - Mozilla Firefox_459.png" width="60%" alt="scan" />
+<img src="images/RStudio_Cloud_459.png" width="60%" alt="scan" />
 </div>
 
 A (solved) problem of dependencies
 ==================================
 
 <div style="text-align: center;">
-<img src="images/RStudio Cloud - Mozilla Firefox_460.png" width="80%" alt="scan" />
+<img src="images/RStudio_Cloud_460.png" width="80%" alt="scan" />
 </div>
 
 Issues of dependencies (new)
@@ -703,7 +726,7 @@ Rstudio solves that for you
 
 <div style="text-align: center;">
 <h2>Go ahead, click on "install"</h2>
-<img src="images/RStudio Cloud - Mozilla Firefox_460.png" width="80%" alt="scan" />
+<img src="images/RStudio_Cloud_460.png" width="80%" alt="scan" />
 </div>
 
 Solving dependencies
@@ -771,20 +794,52 @@ foreach pkg in outreg esttab someprog {
 ```
 </small>
 
+Result
+======
+type: alert
+
+> Goal 3: Robustness and automation - getting close to push-button reproducibility
+
+By solving dependencies explicitly, robustness is improved.
+
+By doing so with a dynamic function, automation is possible.
+
+***
+
+> Goal 4: Correctly document reproducible research
+
+Documenting dependencies is a critical part of reproducible research.
+
+
 Packages installed?
 ==================
+incremental: true
+
+Add text to the document:
+
+
+```r
+# hidden dependency, will install packages that are needed
+source("global-config.R",echo=FALSE)
+```
+
+and adjust `global-config.R` to also list `knitcitations`
+
+***
 
 ## Click on "Knit"
 
-Problem solved?
-===============
-Not quite
+![rendering errors](images/RStudio_Cloud_464.png)
+
+Dependencies again
+=================
 
 <div style="text-align: center;">
-<img src="images/RStudio Cloud - Mozilla Firefox_464.png" width="60%" alt="scan" />
+<img src="images/RStudio_Cloud_464.png" width="60%" alt="scan" />
 </div>
 
-Another problem (maybe)
+
+And another problem (maybe)
 =======================
 Enable popups for this site:
 
@@ -813,210 +868,144 @@ incremental: true
 ## Not quite...
 
 ### Important 
-- how permanent is my document?
-- how permanent is the data we are using?
+- record any changes (**Goal 4**)
+- how permanent is the data we are using? (**Goal 2**)
+- how permanent is my document? (**Goal 2**)
 
 ### Useful 
-- how can others easily see my latest version?
+- how can others easily see my latest version? (**Goal 3**)
+
+Next steps
+==========
+
+## Making the page more permanent
+
+- Using [Zenodo](zenodo.html)
+
+## Making the page more accessible
+
+- [on Github](github-pages.html)
+- on Gitlab
+
+***
+
+## Recording and documenting changes
+- using Git**b!
+
+## Making the data permanent
+- using Zenodo again
 
 
-Making the document more permanent
-==================================
+
+
+Recording changes
+=================
 type: section
 
-Making the document more permanent
-==================================
-
-
-
-- we could have started on the Open Science Framework (possibly)
-
-
-[![OSF](images/Screenshot_2019-04-23 OSF Home.png)](https://osf.io)
-
-***
-- we could create a PDF and store it on Cornell's eCommons
-[![ecommons](images/Screenshot_2019-04-23 Home.png)](https://ecommons.cornell.edu/)
-
-
-- we could submit to a journal!
-
-
-We are going to use Zenodo
-==========================
-incremental: true
-[![zenodo](images/Screenshot_2019-04-23 Zenodo - Research Shared.png)](https://zenodo.org)
-
-Zenodo is the social-science (general-purpose) repository managed by CERN
-
-***
-![CERN](images/cern-lhc-firsthalfofcmsinnertrackerbarrel.jpg)
-
-Why Zenodo?
-===========
-## Because it makes it really easy
-- create a hook from Zenodo to Github
-- create a release on Github
-- a permanent record remains on Zenodo with a DOI [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.400356.svg)](https://doi.org/10.5281/zenodo.400356)
-  - even if you delete your Github repo!
-
-For more info, see https://guides.github.com/activities/citable-code/
-  
-***
-![Zenodo page](images/Screenshot_2019-04-23 Replication for How Much Do Startups Impact Employment Growth in the U S Zenodo.png)
-
-Making the page more accessible
-===============================
-type: section
-
-Making the page more accessible
-===============================
-Initially, you saw this 
-
-[![replicated page](images/Screenshot_2019-04-23-Replication_for_how_much.png)](https://larsvilhuber.github.io/jobcreationblog/README.html)
-
-***
-But the code behind it is at https://github.com/larsvilhuber/jobcreationblog 
-
-![Github](images/Screenshot_2019-04-23_larsvilhuber_jobcreationblog.png)
-
-Creating a webpage from Github-hosted code
-==========================================
-- Go into the settings
-- Tick the box to make it visible
-- Ensure that you have HTML pages ("Github Pages" does not render Markdown)
-
-
-***
-![settings](images/Screenshot_2019-04-23 larsvilhuber jobcreationblog settings.png)
-
-Having Github (and some friends) create a webpage
-================================================
-## We can go one step further
-- Have the document be created automatically when we change and commit
-  - R code would be run "in the cloud" (not on Rstudio.cloud manually)
-  - automatically! 
-  - See https://docs.travis-ci.com/user/languages/r/ for more details
-  
-***
-
-## Challenges
-- Code needs to be replicable!
-  - all the dependencies need to be solved in our code
-  - won't work for paid-for software (Stata, SPSS, SAS)
-  
-  
-How permanent is the data?
-=========================
-type: section
-
-The data is obtained from a Census Bureau website.
-- The website http://www2.census.gov/ces/bds/ might be re-organized and disappear
-- The data format might change
-- The API might change
-- We only need two small chunks of code
-
-Making the data more permanent
-=============================
-
-## Multiple options
-  -  [Dryad Digital Repository](http://datadryad.org/)
-  -  [figshare](http://figshare.com/)
-  -  [Harvard Dataverse Network](http://thedata.harvard.edu/dvn/)
-  -  [ICPSR](https://www.icpsr.umich.edu/icpsrweb/) and [OPENICPSR](https://www.openicpsr.org/openicpsr/)
-  -  [Open Science Framework](http://osf.io/)
-  -  [Zenodo](http://zenodo.org/)
-  
-***
-We used Zenodo again, but all the others are just as good!
-- We uploaded manually
-
-[![zenodo](images/Screenshot_2019-04-23 Zenodo - Research Shared.png)](https://zenodo.org)
-
-Using the permanent data
-========================
+Your almost there
+=================
+Because we used Git**h, we have the changes already under control:
 
 <div style="text-align: center;">
-<img src="images/Screenshot_2019-04-23 Replication Data for Replication for How Much Do Startups Impact Employment Growth in the U S.png" width="80%" alt="scan" />
+<img alt="Rstudio top right" src="images/RStudio_Cloud_top_right.png" width="60%"  />
 </div>
 
-Making code changes cautiously (branching)
-========================
-## If we want to incorporate the Zenodo data
-We could
-- make all the changes right away
-- possibly mess up the live site/ latest version of the paper?
-- maybe annoy our co-authors?
 
-***
-## But we used a version control system with **branching**!
-We instead
-- created a new branch `zenodo`
-- made all the changes there
-- can compare the changes to the `main` branch
-- consult with our co-authors before pulling the changes back into the main branch
-- our live site/paper remains valid the entire time
+Commit all the changes
+===================
+
+<div style="text-align: center;">
+<img alt="Rstudio git" src="images/RStudio_Cloud_git.png" width="60%"  />
+</div>
+
+Commit all the changes
+===================
+
+<div style="text-align: center;">
+<img alt="Rstudio git boxes checked" src="images/RStudio_Cloud_git_checked.png" width="60%"  />
+</div>
+
+Review the changes
+==================
+<div style="text-align: center;">
+<img alt="Rstudio review" src="images/RStudio_Cloud_git_review_changes.png" width="60%"  />
+</div>
+
+Push back to repository
+======================
+
+<div style="text-align: center;">
+<img alt="Rstudio git push" src="images/RStudio_Cloud_git_push.png" width="60%"  />
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Compare the changes: Version Control
 ===================
-Since we used Gitlab, you can compare the changes: <small>https://gitlab.com/larsvilhuber/jobcreationblog/compare/master...zenodo?view=parallel</small>
+Since we used Gitlab, you can compare the changes: <small>https://gitlab.com/larsvilhuber/jobcreationblog/compare/v1.0...master?view=parallel</small>
 
 <div style="text-align: center;">
-<img src="images/Screenshot_2019-04-29 larsvilhuber jobcreationblog gitlab diff.png" width="80%" alt="scan" />
+<img src="images/gitlab-diff.png" width="80%" alt="scan" />
 </div>
 
-Compare the changes: Version Control
-===================
+This is one way to recover changes, and then verbosely describe them to the editor/thesis advisor/etc.!
 
-We could then proceed to incorporate (**pull** or **merge**) the changes into the `main` repository:
 
-<div style="text-align: center;">
-<img src="images/Screenshot_2019-04-29 larsvilhuber jobcreationblog gitlab merge request.png" width="50%" alt="scan" />
-</div>
 
-Read more about it at https://help.github.com/en/articles/about-pull-requests and https://docs.gitlab.com/ee/gitlab-basics/add-merge-request.html 
 
-Final result
-============
-The final result would
 
-- pull data from Zenodo
-- reliably reproduce the graph as presented today
-- use citable data (`DOI = 10.5281/zenodo.2649598`)
-- be citable itself (`DOI = 10.5281/zenodo.400356`)
+Lessons learned
+===============
 
-Conclusion
-==========
-type: section
 
-Conclusion
-==========
-## Replication can be a lot of work
-We've touched on
-- Replication per se
-- Replicable documents
-- Possible pitfalls of software dependencies
-- Cloud computing platforms
-- Permanence of source material (website, data) and how to solve it
+##  Goal 1: Identify all the elements of a fully reproducible analysis
+
+Data, source document, dependencies
+
+## Goal 2: Be able to curate the data and code necessary for reproducible analysis
+
+Today:
+- source document
+- Gitlab
+
+Tomorrow:
+- input data
+- output document
 
 ***
 
-![project](images/Screenshot_2019-04-23-Replication_for_how_much.png)
+## Goal 3: Robustness and automation - getting close to push-button reproducibility
+- Rmarkdown document has code, text, and figures 
+- Dependencies identified, addressed
 
-Conclusion
-==========
+## Goal 4: Correctly document reproducible research
+- Gitlab version control to document changes
+- Documenting dependencies for clarity
 
-## We have not covered everything
-... because there can be a lot more
-- HP computing <small>(length, quantity, throughput)</small>
-- Issues with commercial (paid) software <small>(access, permanence)</small>
-- Data that is not public-use
-- Data in a locked room
 
-***
-![SafePODS](images/SafePODS.png)
 
-Thank you
+
+
+
+
+
+
+Thank you for today
 ==========
 type: section
 
@@ -1027,3 +1016,6 @@ Source: https://github.com/labordynamicsinstitute/replication-tutorial-2019
 
 
 ![CC-BY-4.0](images/cc-by-nc.png) <small>[Creative Commons Attribution-NonCommercial 4.0 International Public License](LICENSE.html)</small>
+
+
+
