@@ -1,4 +1,4 @@
-Replication Tutorial
+Replication and Reproducibility in Social Sciences and Statistics: Overview and Practice
 ========================================================
 author: Lars Vilhuber
 date: August 2019
@@ -44,9 +44,8 @@ check <- emo::ji("heavy_check_mark")
 Overview
 ========================================================
 
-- High-level overview (15:00)
-- Details of Reproducibility Checks (15:00)
-- A concrete example
+- High-level overview (60:00)
+- A very concrete example (remainder)
 
 Replication and Reproducibility in Social Sciences and Statistics: Context, Concerns, and Concrete Measures
 ========================================================
