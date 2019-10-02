@@ -1,7 +1,7 @@
 Replication and Reproducibility in Social Sciences and Statistics: Overview and Practice
 ========================================================
 author: Lars Vilhuber
-date: August 2019
+date: 2019-10-01
 autosize: true
 width: 1200
 
@@ -884,9 +884,22 @@ incremental: true
 ### Useful 
 - how can others easily see my latest version? (**Goal 3**)
 
+
+
+
+
 Next steps
 ==========
 
+
+## Recording and documenting changes
+- using Git**b!
+
+## Making the data permanent
+- using Zenodo again
+
+
+***
 ## Making the page more permanent
 
 - Using [Zenodo](zenodo.html)
@@ -896,13 +909,9 @@ Next steps
 - [on Github](github-pages.html)
 - on Gitlab
 
-***
 
-## Recording and documenting changes
-- using Git**b!
 
-## Making the data permanent
-- using Zenodo again
+
 
 
 
@@ -913,7 +922,7 @@ type: section
 
 Your almost there
 =================
-Because we used Git**h, we have the changes already under control:
+Because we used Git**b, we have the changes already under control:
 
 <div style="text-align: center;">
 <img alt="Rstudio top right" src="images/RStudio_Cloud_top_right.png" width="60%"  />
@@ -1022,7 +1031,7 @@ Presentation: https://labordynamicsinstitute.github.io/replication-tutorial-2019
 
 Source: https://github.com/labordynamicsinstitute/replication-tutorial-2019
 
-
+Next day: [here](day2.html)
 
 ![CC-BY-4.0](images/cc-by-nc.png) <small>[Creative Commons Attribution-NonCommercial 4.0 International Public License](LICENSE.html)</small>
 
